@@ -1,0 +1,20 @@
+To use this module:
+
+* Build this module and copy the generated JAR into your XWiki's WEB-INF/lib directory
+* Download the http://tuckey.org/urlrewrite/ JAR and put it in your XWiki's WEB-INF/lib directory
+* Edit WEB-INF/web.xml to add the URL Rewrite Filter definition and mapping as defined at http://tuckey.org/urlrewrite/
+* Add a WEB-INF/urlrewrite.xml file with the following content:
+
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE urlrewrite PUBLIC "-//tuckey.org//DTD UrlRewrite 4.0//EN"
+        "http://www.tuckey.org/res/dtds/urlrewrite4.0.dtd">
+<urlrewrite>
+  <class-rule class="org.xwiki.contrib.url.internal.rewrite.ReferenceURLSchemeRewriteRule"/>
+</urlrewrite>
+
+* Restart XWiki
+* Try accessing a page such as:
+** http://localhost:8080/xwiki/Main.WebHome
+** http://localhost:8080/xwiki/entity/Main.WebHome
+** http://localhost:8080/xwiki/entity/view/Main.WebHome
+** http://localhost:8080/xwiki/entity/view/page/Main.WebHome
